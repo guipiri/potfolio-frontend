@@ -1,0 +1,25 @@
+.navBar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100px;
+      width: 100%;
+      padding: 10px 50px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+}
+
+.navBar::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-left: 40px;
+      margin-right: 0;
+      display: block;
+      content: "";
+      height: 0.1em;
+      background-color: transparent;
+      background-image: linear-gradient(to right, #101419 48.96%, rgba(16, 20, 25, 0) 100%);
+}

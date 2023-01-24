@@ -1,10 +1,15 @@
 import "./App.css";
+import InitialAnimation from "./pages/InitialAnimation/index";
+import NavBar from "./components/NavBar/index";
 
 function App() {
 	return (
 		<div className="app">
-			<p className="typing">Hello, welcome to my portfolio.</p>
-			<p className="typing2">You can call me Guilherme!</p>
+			<NavBar />
+			<InitialAnimation
+				texta="Welcome to my portfolio."
+				textb="You can call me Guilherme!"
+			/>
 		</div>
 	);
 }
