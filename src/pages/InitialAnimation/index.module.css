@@ -32,7 +32,7 @@
 
 @keyframes blinkCursor {
   from {
-    border-right-color: white;
+    border-right-color: #15ca4f;
   }
 
   to {
