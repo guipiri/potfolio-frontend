@@ -3,19 +3,16 @@
   font-size: 1.1em;
   color: rgba(255, 255, 255, 0.629);
   margin: 10px;
-  text-align: center;
+  padding-top: 4px;
+  padding-left: 4px;
+  text-align: center; 
   border-left: 3px solid transparent;
 }
 
 .button:hover {
   color: #ffffff;
+  border-left: 3px solid #15ca4f;
   transition: 0.4s;
-}
-
-.button::before {
-  content: "|";
-  padding-right: 4px;
-  color: #15ca4f;
 }
  
 
