@@ -1,0 +1,21 @@
+.footer {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: 40px;
+  margin-right: 55px;
+  display: block;
+  content: "";
+  height: 0.1em;
+  background-color: transparent;
+  background-image: linear-gradient(to right, #15ca4f 48.96%, rgba(16, 20, 25, 0) 100%);
+}
