@@ -1,3 +1,17 @@
+.noTyping {
+  color: white;
+  font-size: 1.2em;
+  border-right: 2px solid transparent;
+}
+.noTyping2 {
+  color: white;
+  font-size: 1.2em;
+  border-right: 2px solid transparent;
+  max-width: fit-content;
+  animation: blinkCursor infinite steps(40) 800ms normal;
+}
+
+
 .typing {
   color: white;
   font-size: 1.2em;
