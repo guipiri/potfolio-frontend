@@ -3,20 +3,20 @@ import styles from "./index.module.css";
 
 function InitialAnimation({ texta, textb }) {
 
-	const modeTyping = sessionStorage.getItem("modeTyping");
+	const modeTypingOn = sessionStorage.getItem("modeTypingOn");
 	setTimeout(() => {
-		sessionStorage.setItem("modeTyping", false);
-	}, 7000);
+		sessionStorage.setItem("modeTypingOn", false);
+	}, 5000);
 
 	return (
 		<>
-			{!modeTyping && (
+			{!modeTypingOn && (
 				<>
 					<p className={styles.typing}>{texta}</p>
 					<p className={styles.typing2}>{textb}</p>
 				</>
 			)}
-			{modeTyping && (
+			{modeTypingOn && (
 				<>
 					<p className={styles.noTyping}>{texta}</p>
 					<p className={styles.noTyping2}>{textb}</p>
