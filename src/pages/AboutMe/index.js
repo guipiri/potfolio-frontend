@@ -39,86 +39,79 @@ function AboutMe() {
 				period: "2019-2021",
 			},
 		],
+		stacks: ["React.js", "Node.js", "Javascript", "HTML", "CSS"],
+		description:
+			"Bachelor of Mathematics, digital marketing professional, paid media specialist, technology enthusiast, aspiring developer, very curious and passionate about solving problems.",
 	};
 	let meString = JSON.stringify(me, null, "\t").replaceAll('"', "");
+
+	const P1 = styles.jsonP1;
+	const P2 = styles.jsonP2;
+	const P3 = styles.jsonP3;
+
+	const identation = [
+		[1, P1],
+		[2, P1],
+		[3, P1],
+		[5, P2],
+		[8, P3],
+		[11, P3],
+		[14, P3],
+		[16, P2],
+		[18, P2],
+		[21, P3],
+		[24, P3],
+		[27, P3],
+		[29, P2],
+		[30, P1],
+		[31, P1],
+		[33, P2],
+		[36, P3],
+		[39, P3],
+		[42, P3],
+		[44, P2],
+		[46, P2],
+		[49, P3],
+		[52, P3],
+		[55, P3],
+		[57, P2],
+		[59, P2],
+		[62, P3],
+		[65, P3],
+		[68, P3],
+		[70, P2],
+		[72, P2],
+		[75, P3],
+		[78, P3],
+		[81, P3],
+		[83, P2],
+		[84, P2],
+		[85, P1],
+		[87, P2],
+		[89, P2],
+		[91, P2],
+		[93, P2],
+		[95, P2],
+		[96, P2],
+	];
+
+	console.log(meString.split("\t"));
 
 	return (
 		<div className={styles.jsonDiv2}>
 			<div className={styles.jsonDiv}>
 				<p>var me = {meString.slice(0, 1)}</p>
-				<br />
-				<p className={styles.jsonP1}>{meString.split("\t")[1]}</p>
-				<br />
-				<p className={styles.jsonP1}>{meString.split("\t")[2]}</p>
-				<br />
-				<p className={styles.jsonP1}>{meString.split("\t")[3]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[5]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[8]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[11]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[14]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[16]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[18]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[21]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[24]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[27]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[29]}</p>
-				<br />
-				<p className={styles.jsonP1}>{meString.split("\t")[30]}</p>
-				<br />
-				<p className={styles.jsonP1}>{meString.split("\t")[31]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[33]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[36]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[39]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[42]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[44]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[46]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[49]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[52]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[55]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[57]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[59]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[62]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[65]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[68]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[70]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[72]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[75]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[78]}</p>
-				<br />
-				<p className={styles.jsonP3}>{meString.split("\t")[81]}</p>
-				<br />
-				<p className={styles.jsonP2}>{meString.split("\t")[83]}</p>
-				<br />
-				<p className={styles.jsonP1}>
-					{meString.split("\t")[17].replace("}", "")}
+
+				{identation.map((row) => {
+					return (
+						<p key={row[0]} className={row[1]}>
+							{meString.split("\t")[row[0]]}
+						</p>
+					);
+				})}
+
+				<p className={P1}>
+					{meString.split("\t")[97].replace("}", "")}
 				</p>
 				<p>{meString[meString.lastIndexOf("}")]}</p>
 			</div>

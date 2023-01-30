@@ -1,11 +1,14 @@
 .jsonP1 {
   padding-left: 20px;
+  padding-top: 10px;
 }
 .jsonP2 {
   padding-left: 40px;
+  padding-top: 10px;
 }
 .jsonP3 {
   padding-left: 60px;
+  padding-top: 10px;
 }
 
 .jsonDiv {
@@ -13,7 +16,7 @@
   height: calc(100vh - 270px);
   padding:0 15px;
   /* padding-right: 50%; */
-  /* max-width: 100vw; */
+  max-width: 500px;
   /* width: 100%; */
 }
 
