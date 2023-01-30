@@ -1,3 +1,43 @@
-.jsonP {
+.jsonP1 {
   padding-left: 20px;
+}
+.jsonP2 {
+  padding-left: 40px;
+}
+.jsonP3 {
+  padding-left: 60px;
+}
+
+.jsonDiv {
+  /* overflow-y: auto; */
+  height: calc(100vh - 270px);
+  padding:0 15px;
+  /* padding-right: 50%; */
+  /* max-width: 100vw; */
+  /* width: 100%; */
+}
+
+.jsonDiv2 {
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 10px);
+  /* margin: 0 10px; */
+  margin: 0 5px;
+}
+
+.jsonDiv2::-webkit-scrollbar {
+  background-color: rgba(189, 189, 189, 0.403);
+  width: 7px;
+  border-radius: 7px;
+}
+
+.jsonDiv2::-webkit-scrollbar-thumb {
+  background-color: #15ca4eb0;
+  /* color of the scroll thumb */
+  border-radius: 7px;
+  /* roundness of the scroll thumb */
+  /* border: 3px solid orange; */
+  /* creates padding around scroll thumb */
 }

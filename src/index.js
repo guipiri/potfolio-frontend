@@ -16,7 +16,6 @@ const router = createBrowserRouter([
 					<InitialAnimation
 						texta="Welcome to my portfolio."
 						textb="You can call me Gui!"
-						mode={sessionStorage.getItem("blabla")}
 					/>
 				),
 			},
