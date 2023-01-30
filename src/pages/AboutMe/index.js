@@ -41,7 +41,6 @@ function AboutMe() {
 		],
 	};
 	let meString = JSON.stringify(me, null, "\t").replaceAll('"', "");
-	console.log(meString.split("\t"));
 
 	return (
 		<div className={styles.jsonDiv2}>

@@ -54,3 +54,12 @@
   }
 
 }
+
+.animationAgainBtn {
+  background-color: #15ca4f;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
