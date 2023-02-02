@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import InitialAnimation from "./components/InitialAnimation";
+import Projects from "./pages/Projects";
 
 const router = createBrowserRouter([
 	{
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
 			{
 				path: "/about",
 				element: <AboutMe />,
+			},
+			{
+				path: "/projects",
+				element: <Projects />,
 			},
 		],
 	},
