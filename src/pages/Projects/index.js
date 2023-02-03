@@ -5,12 +5,46 @@ import styles from "./index.module.css";
 function Projects() {
 	return (
 		<div className={styles.projectsPage}>
-			<Project />
-			<Project />
-			<Project />
-			<Project />	
-			<Project />	
-			<Project />	
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
+			<Project
+				title="Project 1"
+				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
+				a motivação do projeto."
+			/>
 		</div>
 	);
 }
