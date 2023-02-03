@@ -16,3 +16,24 @@ body {
   background-color: rgb(46, 46, 46);
   height: 100vh
 }
+
+#root { 
+  height: calc(100vh - 270px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#root::-webkit-scrollbar {
+  background-color: rgba(189, 189, 189, 0.403);
+  width: 7px;
+  border-radius: 7px;
+}
+
+#root::-webkit-scrollbar-thumb {
+  background-color: #15ca4eb0;
+  /* color of the scroll thumb */
+  border-radius: 7px;
+  /* roundness of the scroll thumb */
+  /* border: 3px solid orange; */
+  /* creates padding around scroll thumb */
+}
