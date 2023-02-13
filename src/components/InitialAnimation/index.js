@@ -18,7 +18,7 @@ function InitialAnimation({ texta, textb }) {
 	}, 5000);
 
 	return (
-		<>
+		<div>
 			{modeTypingOn && (
 				<>
 					<p className={styles.typing}>{texta}</p>
@@ -40,7 +40,7 @@ function InitialAnimation({ texta, textb }) {
 			>
 				modeTypingOnAgain
 			</button>
-		</>
+		</div>
 	);
 }
 

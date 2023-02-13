@@ -6,6 +6,7 @@ import AboutMe from "./pages/AboutMe";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import InitialAnimation from "./components/InitialAnimation";
 import Projects from "./pages/Projects";
+import Telegram from "./pages/Telegram";
 
 const router = createBrowserRouter([
 	{
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
 				path: "/projects",
 				element: <Projects />,
 			},
+			{
+				path:"/projects/telegram",
+				element: <Telegram/>
+			}
 		],
 	},
 ]);

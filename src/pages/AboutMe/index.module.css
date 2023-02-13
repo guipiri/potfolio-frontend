@@ -19,12 +19,3 @@
   max-width: 500px;
   /* width: 100%; */
 }
-
-.jsonDiv2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100vw - 10px);
-  /* margin: 0 10px; */
-  margin: 0 5px;
-}

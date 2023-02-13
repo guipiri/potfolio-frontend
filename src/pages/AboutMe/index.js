@@ -98,7 +98,6 @@ function AboutMe() {
 	console.log(meString.split("\t"));
 
 	return (
-		<div className={styles.jsonDiv2}>
 			<div className={styles.jsonDiv}>
 				<p>var me = {meString.slice(0, 1)}</p>
 
@@ -115,7 +114,6 @@ function AboutMe() {
 				</p>
 				<p>{meString[meString.lastIndexOf("}")]}</p>
 			</div>
-		</div>
 	);
 }
 

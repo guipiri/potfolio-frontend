@@ -6,9 +6,9 @@ import { Outlet } from "react-router-dom";
 function Home() {
 	return (
 		<div className={styles.home}>
-			<NavBar />
-			<Outlet/>
-			<Footer/>
+				<NavBar />
+				<Outlet/>
+				<Footer/>
 		</div>
 	);
 }
