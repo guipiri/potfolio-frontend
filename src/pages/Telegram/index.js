@@ -1,21 +1,43 @@
-import { upload } from '@testing-library/user-event/dist/upload';
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import styles from "./index.module.css";
 
 function Telegram() {
   const [file, setFile] = useState("");
-    function handleSubmit(e) {
-        e.preventDefault()
-        console.log(file);
-        upload(e.target,file)
-    }
+  
+  const formData = new FormData()
+  formData.append("htmlInput", file)
+	
+  function handleSubmit(e) {
+    console.log(formData);
+		e.preventDefault();
+		console.log(file);
+		fetch("http://localhost:3001/uploadFile", {
+			method: "POST",
+			body: formData,
+			headers: {
+				"Content-Type":
+					"multipart/form-data",
+			},
+		});
+	}
 
-  return (
-    <form onSubmit={handleSubmit} encType="multipart/form-data">
-        <label htmlFor="htmlInput"></label>
-        <input name='htmlInput' id="htmlInput" type="file" accept='text/html' onChange={(e)=>{setFile(e.target.files[0])}} />
-        <button type='submit'>Enviar</button>
-    </form>
-  )
+	return (
+		<div className={styles.formConteiner}>
+			<form onSubmit={handleSubmit} encType="multipart/form-data">
+				<label htmlFor="htmlInput">Suba seus arquivos HTML:</label>
+				<input
+					name="htmlInput"
+					id="htmlInput"
+					type="file"
+					accept="text/html"
+					onChange={(e) => {
+						setFile(e.target.files[0]);
+					}}
+				/>
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	);
 }
 
-export default Telegram
+export default Telegram;

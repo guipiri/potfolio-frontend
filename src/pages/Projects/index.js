@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Project from "../../components/Project";
 import styles from "./index.module.css";
 
 function Projects() {
 	return (
 		<div className={styles.projectsPage}>
-			<Project
-				title="Project 1"
-				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
-				a motivação do projeto."
-			/>
+			<Link to='/projects/telegram'>
+				<Project
+					title="Telegram Comments Extraction"
+					text="Script que extrai o nome dos usuários que comentaram numa publicação de canal do Telegram"
+				/>
+			</Link>
 			<Project
 				title="Project 1"
 				text="Uma breve descrição do projeto aqui! Explica com poucas pvras
