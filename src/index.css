@@ -41,3 +41,11 @@ body {
 a {
   text-decoration: none;
 }
+
+.success {
+  color: #15ca4f;
+}
+
+.fail {
+  color: red;
+}
