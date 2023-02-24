@@ -57,7 +57,7 @@ function Telegram() {
 				/>
 
 				<form onSubmit={handleSubmit} encType="multipart/form-data">
-					<label htmlFor="htmlInput">
+					<label className={styles.label} htmlFor="htmlInput">
 						<AiOutlineUpload />
 						<input
 							name="htmlInput"
@@ -67,6 +67,15 @@ function Telegram() {
 							multiple
 							onChange={(e) => {
 								setFiles(e.target.files);
+							}}
+							onDragEnter={(e) => {
+								e.target.labels[0].className +=
+									" " + styles.dragEnter;
+								console.log(e);
+							}}
+							onDragLeave={(e) => {
+								console.log(e);
+								e.target.labels[0].className = styles.label;
 							}}
 						/>
 						drag and drop your HTML files here...

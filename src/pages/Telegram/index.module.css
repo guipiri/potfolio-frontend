@@ -16,7 +16,7 @@
   opacity: 0;
 }
 
-.formConteiner label {
+.label {
   cursor: pointer;
   height: 100px;
   border: 2px white dotted;
@@ -56,6 +56,12 @@
   border-radius: 0;
   transition: 0.8s;
   border-color: white;
+}
+
+.dragEnter {
+  border: 2px #15ca4f dotted;
+  background-color: rgba(255,255,255,0.05);
+  transition: 0.3s;
 }
 
 
