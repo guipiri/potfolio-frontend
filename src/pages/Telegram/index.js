@@ -67,19 +67,26 @@ function Telegram() {
 							multiple
 							onChange={(e) => {
 								setFiles(e.target.files);
+								console.log(files);
 							}}
 							onDragEnter={(e) => {
 								e.target.labels[0].className +=
 									" " + styles.dragEnter;
-								console.log(e);
 							}}
 							onDragLeave={(e) => {
-								console.log(e);
 								e.target.labels[0].className = styles.label;
 							}}
 						/>
 						drag and drop your HTML files here...
 					</label>
+					<div>
+						<ol>
+							{files &&
+								Array.from(files).map((item) => {
+									return <li>{item.name}</li>;
+								})}
+						</ol>
+					</div>
 					<button type="submit">Enviar</button>
 				</form>
 			</div>
