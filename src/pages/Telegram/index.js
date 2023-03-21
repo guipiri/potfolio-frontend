@@ -4,6 +4,7 @@ import axios from "axios";
 import Alert from "../../components/Alert";
 import ProjectDescription from "../../components/ProjectDescription";
 import { AiOutlineUpload } from "react-icons/ai";
+import { type } from "@testing-library/user-event/dist/type";
 
 function Telegram() {
 	const [files, setFiles] = useState();
@@ -47,6 +48,17 @@ function Telegram() {
 			);
 	}
 
+	if (files && Array.from(files).find(({ type }) => type !== "text/html")) {
+		setAlertConfig({
+			on: true,
+			msg: "Apenas arquivos do tipo HTML são permitidos!",
+			title: "Formato de arquivo incompatível",
+			type: "fail",
+		});
+		setFiles("");
+	}
+	console.log(files);
+
 	return (
 		<>
 			<div className={styles.formConteiner}>
@@ -67,7 +79,6 @@ function Telegram() {
 							multiple
 							onChange={(e) => {
 								setFiles(e.target.files);
-								console.log(files);
 							}}
 							onDragEnter={(e) => {
 								e.target.labels[0].className +=
@@ -76,14 +87,17 @@ function Telegram() {
 							onDragLeave={(e) => {
 								e.target.labels[0].className = styles.label;
 							}}
+							onDrop={(e) => {
+								e.target.labels[0].className = styles.label;
+							}}
 						/>
 						drag and drop your HTML files here...
 					</label>
 					<div>
 						<ol>
 							{files &&
-								Array.from(files).map((item) => {
-									return <li>{item.name}</li>;
+								Array.from(files).map((item, index) => {
+									return <li key={index}>{item.name}</li>;
 								})}
 						</ol>
 					</div>
