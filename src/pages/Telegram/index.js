@@ -4,14 +4,13 @@ import axios from "axios";
 import Alert from "../../components/Alert";
 import ProjectDescription from "../../components/ProjectDescription";
 import { AiOutlineUpload } from "react-icons/ai";
-import { type } from "@testing-library/user-event/dist/type";
 
 function Telegram() {
 	const [files, setFiles] = useState();
 	const [alertConfig, setAlertConfig] = useState({ on: false });
-
+	
 	const api = axios.create({
-		baseURL: "http://localhost:3001/",
+		baseURL: process.env.REACT_APP_API_URL,
 	});
 
 	async function handleSubmit(e) {
@@ -57,7 +56,6 @@ function Telegram() {
 		});
 		setFiles("");
 	}
-	console.log(files);
 
 	return (
 		<>
