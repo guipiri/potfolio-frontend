@@ -15,46 +15,61 @@ function Telegram() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		const formData = new FormData();
 
-		for (let index = 0; index < files.length; index++) {
-			formData.append("htmlInput", files[index]);
+		if (!files[0]) {
+			setAlertConfig({
+				on: true,
+				msg: "Selecione arquivos HTML do Telegram!",
+				title: "Nenhum arquivo selecionado",
+				type: "fail",
+			})
+		} else {
+			const formData = new FormData();
+	
+			for (let index = 0; index < files.length; index++) {
+				formData.append("htmlInput", files[index]);
+			}
+	
+			const headers = {
+				headers: {
+					"Content-Type": "multipart/form-data;bondary=My Bondary",
+				},
+			};
+	
+			await api
+				.post("/uploadFiles", formData, headers)
+				.then((response) =>	
+					setAlertConfig({
+						on: true,
+						msg: response.data,
+						title: "Sucesso no upload!",
+						type: "success",
+					})
+				)
+				.then(() => setFiles)
+				.catch((err) =>
+					setAlertConfig({
+						on: true,
+						msg: err.data,
+						title: "Falha",
+						type: "fail",
+					})
+				);
 		}
-
-		const headers = {
-			headers: {
-				"Content-Type": "multipart/form-data;bondary=My Bondary",
-			},
-		};
-
-		await api
-			.post("/uploadFiles", formData, headers)
-			.then((response) =>
-				setAlertConfig({
-					on: true,
-					msg: response.data,
-					title: "Sucesso no upload!",
-					type: "success",
-				})
-			)
-			.catch((err) =>
-				setAlertConfig({
-					on: true,
-					msg: err.data,
-					title: "Falha",
-					type: "fail",
-				})
-			);
 	}
 
-	if (files && Array.from(files).find(({ type }) => type !== "text/html")) {
-		setAlertConfig({
-			on: true,
-			msg: "Apenas arquivos do tipo HTML são permitidos!",
-			title: "Formato de arquivo incompatível",
-			type: "fail",
-		});
-		setFiles("");
+	function handleChange(e) {
+		const files = e.target.files
+		if (files && Array.from(files).find(({ type }) => type !== "text/html")) {
+			setAlertConfig({
+				on: true,
+				msg: "Apenas arquivos do tipo HTML são permitidos!",
+				title: "Formato de arquivo incompatível",
+				type: "fail",
+			});
+		} else {
+			setFiles(files)
+		}
 	}
 
 	return (
@@ -70,14 +85,13 @@ function Telegram() {
 					<label className={styles.label} htmlFor="htmlInput">
 						<AiOutlineUpload />
 						<input
+							value=""
 							name="htmlInput"
 							id="htmlInput"
 							type="file"
 							accept="text/html"
 							multiple
-							onChange={(e) => {
-								setFiles(e.target.files);
-							}}
+							onChange={handleChange}
 							onDragEnter={(e) => {
 								e.target.labels[0].className +=
 									" " + styles.dragEnter;
@@ -95,7 +109,7 @@ function Telegram() {
 						<ol>
 							{files &&
 								Array.from(files).map((item, index) => {
-									return <li key={index}>{item.name}</li>;
+									return <li className={styles.listFiles} key={index}>{item.name}<button type="reset" onClick={()=>setFiles()}>remove</button></li>;
 								})}
 						</ol>
 					</div>
